@@ -68,7 +68,7 @@ def my_api():
 def add_star():
   with tracer.start_span('MongoDB') as span:  
    span.set_tag('Add Star', 'Add Star')
-   with span_in_context(span):
+   with tracer.start_as_current_span(span):
        star = mongo.db.stars
        name = request.json['name']
        distance = request.json['distance']
