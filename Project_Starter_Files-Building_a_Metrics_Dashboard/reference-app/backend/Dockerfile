@@ -15,5 +15,6 @@ ENV PROJECT_ID ${PROJECT_ID}
 RUN apt-get update && \
     pip install --upgrade pip && \
     pip install -r requirements.txt
+    pip3 install prometheus_client
 
 CMD ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-w", "4", "-b", "0.0.0.0:8080", "app:app"]
