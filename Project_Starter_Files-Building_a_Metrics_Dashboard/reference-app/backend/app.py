@@ -8,6 +8,7 @@ from opentelemetry.exporter import jaeger
 from jaeger_client import Config
 from jaeger_client.metrics.prometheus import PrometheusMetricsFactory
 from opentelemetry.sdk.trace import TracerProvider
+from opentracing_instrumentation.request_context import get_current_span, span_in_context
 from opentelemetry.sdk.trace.export import BatchExportSpanProcessor
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
@@ -74,11 +75,11 @@ def add_star():
        distance = request.json['distance']
        with tracer.start_span('Mongo Insert ',child_of=get_current_span()) as second_span: 
             second_span.set_tag('Mongo Insert','Mongo Insert')
-            with span_in_context(second_span):
-                 star_id = star.insert({'name': name, 'distance': distance})
+            with tracer.start_as_current_span(second_span):
+                   star_id = star.insert({'name': name, 'distance': distance})
        with tracer.start_span('Mongo Find By ID ',child_of=get_current_span()) as third_span: 
             third_span.set_tag('Find ByID','Find By ID')
-            with span_in_context(third_span):
+            with tracer.start_as_current_span(third_span):
                  new_star = star.find_one({'_id': star_id })
    output = {'name' : new_star['name'], 'distance' : new_star['distance']}
   return jsonify({'result' : output})
