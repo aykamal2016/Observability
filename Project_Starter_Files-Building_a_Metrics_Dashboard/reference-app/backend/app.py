@@ -8,7 +8,6 @@ from opentelemetry.exporter import jaeger
 from jaeger_client import Config
 from jaeger_client.metrics.prometheus import PrometheusMetricsFactory
 from opentelemetry.sdk.trace import TracerProvider
-from opentracing_instrumentation.request_context import get_current_span, span_in_context
 from opentelemetry.sdk.trace.export import BatchExportSpanProcessor
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
