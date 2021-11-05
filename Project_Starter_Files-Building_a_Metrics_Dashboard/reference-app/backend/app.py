@@ -22,7 +22,14 @@ trace.get_tracer_provider().add_span_processor(
     SimpleExportSpanProcessor(ConsoleSpanExporter())
 )
 
-
+from opentelemetry import trace
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import (
+    BatchSpanProcessor,
+    ConsoleSpanExporter,
+)
 app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
@@ -67,20 +74,17 @@ def my_api():
 @app.route('/star', methods=['POST'])
 def add_star():
   with tracer.start_span('MongoDB') as span:  
-   span.set_tag('Add Star', 'Add Star')
-   with tracer.start_as_current_span(span):
+       span.set_tag('Add Star', 'Add Star')
        star = mongo.db.stars
        name = request.json['name']
        distance = request.json['distance']
-       with tracer.start_span('Mongo Insert ',child_of=get_current_span()) as second_span: 
+       with tracer.start_span('Mongo Insert ',child_of=span) as second_span: 
             second_span.set_tag('Mongo Insert','Mongo Insert')
-            with tracer.start_as_current_span(second_span):
-                   star_id = star.insert({'name': name, 'distance': distance})
-       with tracer.start_span('Mongo Find By ID ',child_of=get_current_span()) as third_span: 
+            star_id = star.insert({'name': name, 'distance': distance})
+       with tracer.start_span('Mongo Find By ID ',child_of=span) as third_span: 
             third_span.set_tag('Find ByID','Find By ID')
-            with tracer.start_as_current_span(third_span):
-                 new_star = star.find_one({'_id': star_id })
-   output = {'name' : new_star['name'], 'distance' : new_star['distance']}
+            new_star = star.find_one({'_id': star_id })
+       output = {'name' : new_star['name'], 'distance' : new_star['distance']}
   return jsonify({'result' : output})
 
 if __name__ == "__main__":
