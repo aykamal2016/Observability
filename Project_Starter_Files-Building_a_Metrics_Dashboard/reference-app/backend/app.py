@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 
 import pymongo
 from flask_pymongo import PyMongo
-from jaeger_client.metrics.prometheus import PrometheusMetricsFactory
 from opentelemetry import trace
 from opentelemetry.exporter import jaeger
 from opentelemetry.sdk.trace import TracerProvider
