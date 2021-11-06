@@ -56,27 +56,27 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def homepage():
+    with tracer.start_span('homepage') as span: 
+     span.set_tag('homepage', 'homepage')   
     return "Hello World"
 
 
 @app.route('/api')
 def my_api():
-    answer = "something"
+    with tracer.start_span('api') as span: 
+     span.set_tag('/Api', '/api')   
+     answer = "something"
     return jsonify(repsonse=answer)
 
 @app.route('/star', methods=['POST'])
 def add_star():
-  with tracer.start_span('MongoDB') as span:  
-       span.set_tag('Add Star', 'Add Star')
+  with tracer.start_span('add_star') as span:  
+       span.set_tag('Add_Star', 'Add_Star')
        star = mongo.db.stars
        name = request.json['name']
        distance = request.json['distance']
-       with tracer.start_span('Mongo Insert ',child_of=span) as second_span: 
-            second_span.set_tag('Mongo Insert','Mongo Insert')
-            star_id = star.insert({'name': name, 'distance': distance})
-       with tracer.start_span('Mongo Find By ID ',child_of=span) as third_span: 
-            third_span.set_tag('Find ByID','Find By ID')
-            new_star = star.find_one({'_id': star_id })
+       star_id = star.insert({'name': name, 'distance': distance})
+       new_star = star.find_one({'_id': star_id })
        output = {'name' : new_star['name'], 'distance' : new_star['distance']}
   return jsonify({'result' : output})
 
