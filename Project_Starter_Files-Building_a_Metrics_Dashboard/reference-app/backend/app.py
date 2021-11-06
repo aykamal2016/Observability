@@ -37,7 +37,7 @@ def init_tracer(service):
                 'param': 1,
             },
             'logging': True,
-            'reporting_host': 'localhost'
+            'reporting_host': 'simplezt-agent.observability.svc.cluster.local'
         },
         service_name=service,
     )
