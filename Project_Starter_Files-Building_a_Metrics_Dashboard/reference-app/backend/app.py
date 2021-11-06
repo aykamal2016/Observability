@@ -31,28 +31,24 @@ def init_tracer(service):
     logging.getLogger('').handlers = []
     logging.basicConfig(format='%(message)s', level=logging.DEBUG)
 
- #   config = Config(
-  #      config={
-   #         'sampler': {
-    #            'type': 'const',
-     #           'param': 1,
-      #      },
-       #     'logging': True,
-        #},
-        #service_name=service,
-    #)
+     config = Config(
+        config={
+          'sampler': {
+               'type': 'const',
+               'param': 1,
+           },
+           'logging': True,
+           'reporting_host': 'localhost',
+              
+        },
+        service_name=service,
+    )
     
-    config = Config(config={'sampler': {'type': 'const', 'param': 1},
-                                'logging': True,
-                                'local_agent':
-                                # Also, provide a hostname of Jaeger instance to send traces to.
-                                {'reporting_host': localhost}},
-                        # Service name can be arbitrary string describing this particular web service.
-                        service_name="backend service")
+   
     # this call also sets opentracing.tracer
     return config.initialize_tracer()
 
-tracer = init_tracer('backend-service')
+tracer = init_tracer('simplezt')
 app.config['MONGO_DBNAME'] = 'example-mongodb'
 app.config['MONGO_URI'] = 'mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb'
 
