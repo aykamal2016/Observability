@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from prometheus_flask_exporter import PrometheusMetrics
 
 from jaeger_client import Config
 from jaeger_client.metrics.prometheus import PrometheusMetricsFactory
