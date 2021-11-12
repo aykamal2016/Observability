@@ -5,7 +5,7 @@ FROM python:3.7-slim
 # Copy local code to the container image.
 ENV APP_HOME /app
 WORKDIR $APP_HOME
-COPY . ./
+COPY ./Project_Starter_Files-Building_a_Metrics_Dashboard/reference-app/trial/ ./
 
 #ARG PROJECT_ID
 #ENV PROJECT_ID ${PROJECT_ID}
@@ -14,6 +14,7 @@ COPY . ./
 # Install production dependencies.
 RUN apt-get update && \
     pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install -r requirements.txt \
+    pip install prometheus_client 
 
 CMD ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-w", "4", "-b", "0.0.0.0:8080", "app:app"]
