@@ -51,8 +51,15 @@ def init_tracer(service):
     return config.initialize_tracer()
 
 tracer = init_tracer('first-service')
+metrics = PrometheusMetrics(app, group_by='endpoint')
+metrics.info("app_info", "App Info", version="1.0.0")
+common_counter = metrics.counter(
+    'by_endpoint_counter', 'Request count by endpoints',
+    labels={'endpoint': lambda: request.endpoint}
+)
 
 @app.route('/')
+@common_counter
 def homepage():
     return render_template("main.html")
     with tracer.start_span('get-python-jobs') as span:
@@ -68,6 +75,12 @@ def homepage():
 
 
     return jsonify(homepages)
-
+# register additional default metrics
+metrics.register_default(
+    metrics.counter(
+        'by_path_counter', 'Request count by request paths',
+        labels={'path': lambda: request.path}
+    )
+)
 if __name__ == "__main__":
     app.run(debug=True,)
