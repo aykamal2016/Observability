@@ -11,6 +11,7 @@
 
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
+![prometheus](https://github.com/aykamal2016/Observability/blob/master/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/prometheus-totalhttp-observability.png)
 
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
