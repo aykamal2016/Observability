@@ -54,7 +54,7 @@ Uptime - The time the service is available, SLI will be time a service is active
 
 TROUBLE TICKET
 
-Name: POST request on backend service /star  Service 500 Error
+Name: POST request on backend service /star  00 500 Internal Server Error
 
 Date: NOVEMBER 14 2021, 19:42:00
 
@@ -64,16 +64,11 @@ Affected Area: Backend Service
 
 Severity: High
 
-Description: /star endpoint in backend service should be able to post request to mongo database to procees it when we tried to post the request  using curl as shown below it gives the below error .
+Description: /star endpoint in backend service should be able to post request to mongo database to procees it when we tried to post the request  using curl as shown below it gives 500 internal server error .
 "vagrant@localhost:~> for i in {1..10} ; do curl --header "Content-Type: application/json" \
 >   --request POST \
 >   --data '{"name":"Ayman","distance":"15"}' \
 >   10.0.2.15:8081/star ; done
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<title>500 Internal Server Error</title>
-<h1>Internal Server Error</h1>
-<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>"
-
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
 
