@@ -27,10 +27,16 @@ for the abstract SLO "monthy uptime" , i will rephrase it to more quantifiable l
   ##### SLI: 
   will be the actual measurement of service uptime. Maybe it's 99.96%.
 
-
-
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
+
+service is defined in terms of five core properties :
+
+Latency — The time taken to serve a request (usually measured in ms) 
+Traffic — The amount of stress on a system from demand ,SLI the number of HTTP requests/second.
+Errors — The number of requests that are failing , SLI number of 50x responses .
+Saturation — The overall capacity of a service , SLI  will be he amount of CPU and RAM usage.
+Uptime - The time the service is available, SLI will be time a service is active
 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
