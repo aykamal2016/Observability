@@ -74,24 +74,6 @@ vagrant@localhost:~> for i in {1..10} ; do curl --header "Content-Type: applicat
 <h1>Internal Server Error</h1>
 <p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>
 
-
-
-
-TROUBLE TICKET
-
-Name:P
-
-Date:
-
-Subject:
-
-Affected Area:
-
-Severity:
-
-Description:
-
-
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
 
