@@ -17,14 +17,14 @@
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
 SLO is  service level objective  which is a target value or range of values for a service level that is measured by an SLI. Latency is one of the 4 golden signals that measure performance thus i want to rephrase the abstract SLO "request response time" to SLO more quantifiable like:
-## SLO: 95% of all Get request with status 200 should be within 0.1 seconds and the SLI will be 
-  ## SLI: 
+#### SLO: 95% of all Get request with status 200 should be within 0.1 seconds and the SLI will be 
+  ##### SLI: 
   will be the actual measure for failed request divided by success request and it can be in the range of 0 to 5 % in order to comply with the target SLO
-  ## SLI: 
+  ##### SLI: 
   Can the the actual measure of the average number of successful request duration and it can be less than 0.1 seconds to comply with the target SLO 
 for the abstract SLO "monthy uptime" , i will rephrase it to more quantifiable like 
-## SLO: 99% monthly uptime for the service 
-  ## SLI: 
+#### SLO: 99% monthly uptime for the service 
+  ##### SLI: 
   will bethe actual measurement of service uptime. Maybe it's 99.96%.
 
 
