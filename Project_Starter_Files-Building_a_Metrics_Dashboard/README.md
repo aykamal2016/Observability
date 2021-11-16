@@ -29,6 +29,7 @@ for the abstract SLO "monthy uptime" , i will rephrase it to more quantifiable l
 
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
+![prometheus](https://github.com/aykamal2016/Observability/blob/master/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/final-totalhttp-observability.png)
 
 service is defined in terms of five core properties :
 
@@ -77,3 +78,4 @@ Description: /star endpoint in backend service should be able to post request to
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+![prometheus](https://github.com/aykamal2016/Observability/blob/master/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/final-dashboard.png)
