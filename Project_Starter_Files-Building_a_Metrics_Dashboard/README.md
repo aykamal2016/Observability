@@ -91,3 +91,22 @@ Success repsonse rate >= 99.99% request
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 ![prometheus](https://github.com/aykamal2016/Observability/blob/master/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/final-dashboard.png)
+The memory usage of the Flask app. 
+
+The CPU usage of the Flask app as measured over 30 seconds intervals.
+
+The 50th percentile of request durations over the last 30 seconds.
+
+pod Uptime
+
+Number  of 40X and 50x responses
+
+Number of failed (non HTTP 200) responses per second.
+
+The average response time measured over 30 seconds intervals for successful requests
+
+Request per second 
+
+The 50th percentile of request durations over the last 30 seconds. 
+
+Total Request per minute 
