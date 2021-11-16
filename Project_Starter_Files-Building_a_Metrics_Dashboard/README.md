@@ -73,16 +73,18 @@ Description: /star endpoint in backend service should be able to post request to
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
 
-Service uptime should >= 99.999 %
-Service latency should less than 0.5 seconds for >= 99.99% requests
-Service with success response should be more than 99.99% request
+Uptime - Service uptime should >= 99.95%
+
+Latency- Service latency should less than 0.5 seconds for >= 99.99% requests
+
+Trafic-  Service success response should be more than 99.99% request
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 CPU Utilization <= 90%
 Memory Utilization <= 90%
 Pod uptime >= 99.999 %
-Average response time should be less than 0.75 seconds
+Average response time should be less than 0.5 seconds
 Response latency should less than 0.5 seconds for >= 99.99% requests
 Error per second <= 0.04% of the request
 Success repsonse rate >= 99.99% request
