@@ -65,6 +65,7 @@ Affected Area: Backend Service
 
 Severity: High
 
+
 Description: /star endpoint in backend service should be able to post request to mongo database to procees it when we tried to post the request  using curl as shown below it gives 500 internal server error .
 "vagrant@localhost:~> for i in {1..10} ; do curl --header "Content-Type: application/json" \
 >   --request POST \
