@@ -81,8 +81,8 @@ Trafic-  Service success response should be more than 99.99% request
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
-CPU Utilization <= 90%
-Memory Utilization <= 90%
+CPU Usage <= 90%
+Memory Usage <= 90%
 Pod uptime >= 99.999 %
 Average response time should be less than 0.5 seconds
 Response latency should less than 0.5 seconds for >= 99.99% requests
