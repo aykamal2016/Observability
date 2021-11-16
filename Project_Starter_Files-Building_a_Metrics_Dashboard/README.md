@@ -25,7 +25,7 @@ SLO is  service level objective  which is a target value or range of values for 
 for the abstract SLO "monthy uptime" , i will rephrase it to more quantifiable like 
 #### SLO: 99% monthly uptime for the service 
   ##### SLI: 
-  will be the actual measurement of service uptime. Maybe it's 99.96%.
+  will be the actual measurement of service uptime. Maybe it's  99.96%.
 
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
