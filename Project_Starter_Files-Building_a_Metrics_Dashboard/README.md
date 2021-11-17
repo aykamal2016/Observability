@@ -87,7 +87,7 @@ SLO Resource Capacity- SLI The amount of memory and cpu usage by the service sho
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 CPU Usage <= 90%
 
-Memory Usage <= 90%
+Memory Usage <= 90% 
 
 Pod uptime >= 99.999 %
 
