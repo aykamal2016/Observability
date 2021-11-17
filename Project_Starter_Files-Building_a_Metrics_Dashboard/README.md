@@ -86,12 +86,19 @@ SLO Resource Capacity- SLI The amount of memory and cpu usage by the service sho
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 CPU Usage <= 90%
+
 Memory Usage <= 90%
+
 Pod uptime >= 99.999 %
+
 Average response time should be less than 0.5 seconds
+
 Response latency should less than 0.5 seconds for >= 99.99% requests
+
 Error per second <= 0.04% of the request
+
 Success repsonse rate >= 99.99% request
+
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 ![prometheus](https://github.com/aykamal2016/Observability/blob/master/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/final-dashboard.png)
