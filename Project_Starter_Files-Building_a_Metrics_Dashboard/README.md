@@ -99,6 +99,9 @@ Error per second <= 0.04% of the request
 
 Success repsonse rate >= 99.99% request
 
+These KPI were chosen as they are relevant and built around the four golden signal developed by google 
+(latency, error rate ,traffic ,saturation)
+
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 ![prometheus](https://github.com/aykamal2016/Observability/blob/master/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/final-dashboard.png)
