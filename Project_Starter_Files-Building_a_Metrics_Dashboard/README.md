@@ -29,14 +29,18 @@ for the abstract SLO "monthy uptime" , i will rephrase it to more quantifiable l
 
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
-![prometheus](https://github.com/aykamal2016/Observability/blob/master/Project_Starter_Files-Building_a_Metrics_Dashboard/answer-img/final-totalhttp-observability.png)
+
 
 service is defined in terms of five core properties :
 
 Latency — The time taken to serve a request (usually measured in ms) 
+
 Traffic — The amount of stress on a system from demand ,SLI the number of HTTP requests/second.
+
 Errors — The number of requests that are failing , SLI number of 50x responses .
+
 Saturation — The overall capacity of a service , SLI  will be he amount of CPU and RAM usage.
+
 Uptime - The time the service is available, SLI will be time a service is active
 
 ## Create a Dashboard to measure our SLIs
